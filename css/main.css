@@ -8,6 +8,7 @@
     --chronicleDisplay: 'Chronicle Display';
     --bg: #0B1D26;
     --wei: #FFF;
+    --accent: #FBD784;
 }
 
 *::before {
@@ -17,6 +18,7 @@
 
 body {
     background: var(--bg);
+    color: var(--wei);
 }
 
 a {
@@ -27,6 +29,8 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    margin-top: 64px;
 }
 
 .logo {
@@ -72,5 +76,81 @@ a {
     line-height: normal;
 }
 .user::before {
+    font-family: 'icons';
     content: '\f2bd';
+    font-weight: 300;
+    margin-right: 8px;
+}
+
+.header__content {
+    margin-top: 198px;
+}
+.socials {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.socials__item {
+    margin-bottom: 24px;
+}
+.socials__txt {
+    display: inline-block;
+    transform: rotate(90deg);
+}
+.insta::before {
+    content: '\f16d';
+}
+.twitt::before {
+    content: '\f099';
+}
+
+.header__subtitle {
+    color: var(--accent);
+    font-family: Gilroy;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+
+    display: flex;
+    align-items: center;
+}
+.header__subtitle::before {
+    content: '';
+    display: block;
+    width: 72px;
+    height: 2px;
+    flex-shrink: 0;
+    background: var(--accent);
+
+    margin-right: 32px;
+}
+.header__title {
+    color: var(--Wei, #FFF);
+    font-family: Chronicle Display;
+    font-size: 88px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100px; /* 113.636% */
+    text-transform: capitalize;
+}
+.header__more {
+    color: #FFF;
+    font-family: Gilroy;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    display: flex;
+}
+.header__more::after {
+    font-family: 'icons';
+    font-weight: 400;
+    content: '\f309';
+    font-size: 23px;
+    
+    margin-left: 20px;
 }
