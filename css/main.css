@@ -25,6 +25,10 @@ a {
     text-decoration: none;
 }
 
+.wrapper {
+    position: relative;
+}
+
 .header__nav {
     display: flex;
     justify-content: space-between;
@@ -84,11 +88,20 @@ a {
 
 .header__content {
     margin-top: 198px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
 }
 .socials {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    position: absolute;
+    left: 0;
 }
 .socials__item {
     margin-bottom: 24px;
@@ -96,12 +109,23 @@ a {
 .socials__txt {
     display: inline-block;
     transform: rotate(90deg);
+    margin-left: -25px;
+    margin-bottom: 60px;
+
+    color: #FFF;
+    font-family: Gilroy;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 .insta::before {
     content: '\f16d';
+    font-size: 24px;
 }
 .twitt::before {
     content: '\f099';
+    font-size: 24px;
 }
 
 .header__subtitle {
@@ -116,6 +140,8 @@ a {
 
     display: flex;
     align-items: center;
+
+    margin-bottom: 32px;
 }
 .header__subtitle::before {
     content: '';
@@ -124,7 +150,7 @@ a {
     height: 2px;
     flex-shrink: 0;
     background: var(--accent);
-
+    
     margin-right: 32px;
 }
 .header__title {
@@ -135,6 +161,8 @@ a {
     font-weight: 600;
     line-height: 100px; /* 113.636% */
     text-transform: capitalize;
+    
+    margin-bottom: 32px;
 }
 .header__more {
     color: #FFF;
@@ -153,4 +181,46 @@ a {
     font-size: 23px;
     
     margin-left: 20px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+
+    max-width: 100px;
+
+    position: fixed;
+    right: 0;
+}
+.content::after {
+    content: '';
+    width: 3px;
+    height: 60px;
+    background: var(--wei);
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.content__item {
+    color: #FFF;
+    text-align: right;
+    font-family: Gilroy;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    padding-right: 32px;
+    border-right: 3px solid rgba(255, 255, 255, 0.5);
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+}
+
+/* Эксперименты */
+.main {
+    font-size: 30px;
+    color: var(--bg);
 }
