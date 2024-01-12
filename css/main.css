@@ -35,6 +35,9 @@ a {
     align-items: center;
 
     margin-top: 64px;
+
+    z-index: 1;
+    position: relative;
 }
 
 .logo {
@@ -94,6 +97,9 @@ a {
     align-items: center;
 
     position: relative;
+
+    z-index: 1;
+    position: relative;
 }
 .socials {
     display: flex;
@@ -126,6 +132,34 @@ a {
 .twitt::before {
     content: '\f099';
     font-size: 24px;
+}
+
+.header {
+    position: relative;
+}
+.body-bg__item {
+    position: absolute;
+    width: 100%;
+    display: block;
+}
+.body-bg__item--sky {
+    top: 0;
+    z-index: -13;
+}
+.body-bg__item--hill {
+    top: 258px;
+    z-index: -10;
+}
+.body-bg__item--mountains {
+    top: 142px;
+    z-index: -12;
+}
+.body-bg__item--shading {
+    top: 0;
+    z-index: -9;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(330deg, rgba(11, 29, 38, 0.00) 31.06%, #0B1D26 108.93%);
 }
 
 .header__subtitle {
@@ -188,7 +222,7 @@ a {
     flex-direction: column;
     align-items: end;
 
-    max-width: 100px;
+    max-width: 132px;
 
     position: fixed;
     right: 0;
@@ -212,15 +246,163 @@ a {
     line-height: normal;
 
     padding-right: 32px;
+    padding-left: 32px;
     border-right: 3px solid rgba(255, 255, 255, 0.5);
     height: 60px;
+    width: 100%;
 
     display: flex;
     align-items: center;
+    justify-content: end;
+}
+.content__item:hover {
+    color: #FFF;
+    background: rgba(255, 255, 255, 0.5);
+    background: linear-gradient(135deg, rgb(8 0 0 / 30%), rgb(4 0 0 / 1%));
 }
 
 /* Эксперименты */
 .main {
     font-size: 30px;
-    color: var(--bg);
+    color: transparent;
+}
+
+@media (max-width: 3999.9px) {
+
+    .body-bg__item--sky {
+        top: 0;
+    }
+    .body-bg__item--hill {
+        top: 845px;
+    }
+    .body-bg__item--mountains {
+        top: 491px;
+    }
+
+}
+@media (max-width: 1999.9px) {
+    .header__content {
+        margin-top: 100px;
+    }
+    .header__title {
+        font-size: 66px;
+        line-height: 80px;
+    }
+
+    .body-bg__item--sky {
+        top: 0;
+    }
+    .body-bg__item--hill {
+        top: 575px;
+    }
+    .body-bg__item--mountains {
+        top: 322px;
+    }
+
+}
+@media (max-width: 1599.9px) {
+
+    .body-bg__item--sky {
+        top: 0;
+    }
+    .body-bg__item--hill {
+        top: 580px;
+    }
+    .body-bg__item--mountains {
+        top: 365px;
+    }
+
+}
+@media (max-width: 1399.9px) {
+    .header__content {
+        margin-top: 80px;
+    }
+    .header__title {
+        font-size: 61px;
+        line-height: 70px;
+    }
+
+    .body-bg__item--sky {
+        top: 0;
+    }
+    .body-bg__item--hill {
+        top: 590px;
+    }
+    .body-bg__item--mountains {
+        top: 380px;
+    }
+
+}
+@media (max-width: 1199.9px) {
+    .header__title {
+        font-size: 51px;
+        line-height: 60px;
+    }
+
+    .body-bg__item--sky {
+        top: 0;
+    }
+    .body-bg__item--hill {
+        top: 570px;
+    }
+    .body-bg__item--mountains {
+        top: 390px;
+    }
+}
+@media (max-width: 991.9px) {
+    .header__title {
+        font-size: 39px;
+        line-height: 49px;
+        margin-bottom: 20px;
+    }
+    .header__subtitle {
+        font-size: 10px;
+        margin-bottom: 20px;
+    }
+    .header__subtitle::before {
+        width: 35px;
+        height: 1.5px;
+    }
+    .body-bg__item--sky {
+        top: 0;
+    }
+    .body-bg__item--hill {
+        top: 417px;
+    }
+    .body-bg__item--mountains {
+        top: 290px;
+    }
+}
+@media (max-width: 797.9px) {
+    .header__title {
+        font-size: 34px;
+        line-height: 45px;
+
+    }
+    
+    .body-bg__item--sky {
+        top: 0;
+    }
+    .body-bg__item--hill {
+        top: 258px;
+    }
+    .body-bg__item--mountains {
+        top: 142px;
+    }
+}
+@media (max-width: 575.9px) {
+    .header__title {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    
+    .body-bg__item--sky {
+        top: 0;
+    }
+    .body-bg__item--hill {
+        top: 258px;
+    }
+    .body-bg__item--mountains {
+        top: 142px;
+    }
 }
