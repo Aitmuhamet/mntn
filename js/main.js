@@ -1,6 +1,8 @@
 let contentList = document.querySelector('.content');
 let socials = document.querySelector('.socials')
-console.log(socials);
+let bgImgMountains = document.querySelector('.body-bg__item--mountains')
+let bgBottomShading = document.querySelector('.body-bg__item--bottom-shading')
+
 
 window.onload = function() {
     calculateContentMarginRight();
@@ -8,6 +10,7 @@ window.onload = function() {
 
 window.addEventListener('resize', function() {
     calculateContentMarginRight();
+    calculateBgBottomShadingEdgeBottom();
 }, true)
 
 function calculateContentMarginRight() {
@@ -20,7 +23,7 @@ function calculateSocialsMarginLeft() {
 }
 
 function calculateElementMargin() {
-    let windowScreenWidth = window.screen.width;
+    let windowScreenWidth = window.innerWidth;
     let elementSideMargin;
     switch (true) {
         case windowScreenWidth > 1400:
@@ -44,4 +47,23 @@ function calculateElementMargin() {
     }
     
     return elementSideMargin;
+}
+
+function calculateBgBottomShadingEdgeBottom() {
+    let coords = bgImgMountains.getBoundingClientRect();
+    bgBottomShading.style.bottom = coords.bottom;
+    console.log('top ' + coords.top);
+    console.log('right ' + coords.right);
+    console.log('bottom ' + coords.bottom);
+    console.log('left ' + coords.left);
+    console.log(" ");
+}
+
+function getCoords(elem) {
+    let box = elem.getBoundingClientRect();
+
+    return {
+        top: box.top + window.pageYOffset,
+
+    }
 }
