@@ -50,20 +50,22 @@ function calculateElementMargin() {
 }
 
 function calculateBgBottomShadingEdgeBottom() {
-    let coords = bgImgMountains.getBoundingClientRect();
+    let coords = getCoords(bgImgMountains);
     bgBottomShading.style.bottom = coords.bottom;
-    console.log('top ' + coords.top);
-    console.log('right ' + coords.right);
-    console.log('bottom ' + coords.bottom);
-    console.log('left ' + coords.left);
-    console.log(" ");
+    console.log(`Box Bottom ${coords.bottom}`);
 }
 
 function getCoords(elem) {
     let box = elem.getBoundingClientRect();
 
-    return {
-        top: box.top + window.pageYOffset,
+    console.log(`scrollTop: ${document.documentElement.scrollTop}`);
+    console.log(`Mount Top: ${box.top}`);
+    console.log(`Mount Bottom: ${box.bottom}`);
 
-    }
+    return {
+        top: box.top + document.documentElement.scrollTop,
+        right: box.right + document.documentElement.scrollLeft,
+        bottom: box.bottom + document.documentElement.scrollTop,
+        left: box.left + document.documentElement.scrollLeft
+    };
 }
