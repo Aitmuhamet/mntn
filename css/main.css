@@ -171,7 +171,7 @@ a:hover,
     background: linear-gradient(330deg, rgba(11, 29, 38, 0.00) 31.06%, #0B1D26 108.93%);
 }
 .body-bg__item--bottom-shading {
-    top: -800px;
+    top: 0px;
     z-index: -8;
     width: 100vw;
     height: var(--bgBottomShadingHeight);
@@ -273,7 +273,6 @@ a:hover,
 }
 .content__item:hover {
     color: var(--accent);
-    border-right-color: var(--accent);
 }
 
 /* Эксперименты */
