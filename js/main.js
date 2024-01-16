@@ -6,11 +6,13 @@ let bgBottomShading = document.querySelector('.body-bg__item--bottom-shading')
 
 window.onload = function() {
     calculateContentMarginRight();
+    calculateBgBottomShadingEdgeBottom();
 }
 
 window.addEventListener('resize', function() {
     calculateContentMarginRight();
     calculateBgBottomShadingEdgeBottom();
+
 }, true)
 
 function calculateContentMarginRight() {
@@ -51,8 +53,14 @@ function calculateElementMargin() {
 
 function calculateBgBottomShadingEdgeBottom() {
     let coords = getCoords(bgImgMountains);
-    bgBottomShading.style.bottom = coords.bottom;
-    console.log(`Box Bottom ${coords.bottom}`);
+    let bgImgMountainsMarginTop = parseInt( getComputedStyle(bgImgMountains).top);
+    let bgImgMountainsMarginHeight = parseInt( getComputedStyle(bgImgMountains).height);
+    let bgBottomShadingHeight = parseInt( getComputedStyle(bgBottomShading).height);
+    bgBottomShading.style.transform = 
+        `translateY(${bgImgMountainsMarginTop 
+            + bgImgMountainsMarginHeight 
+            - bgBottomShadingHeight
+            + 800}px)`;
 }
 
 function getCoords(elem) {

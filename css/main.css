@@ -9,6 +9,7 @@
     --bg: #0B1D26;
     --wei: #FFF;
     --accent: #FBD784;
+    --bgBottomShadingHeight: 700px;
 }
 
 *::before {
@@ -25,6 +26,11 @@ body {
 
 a {
     text-decoration: none;
+}
+a:hover,
+.insta:hover::before,
+.twitt:hover::before {
+    color: var(--accent);
 }
 
 .wrapper {
@@ -165,9 +171,10 @@ a {
     background: linear-gradient(330deg, rgba(11, 29, 38, 0.00) 31.06%, #0B1D26 108.93%);
 }
 .body-bg__item--bottom-shading {
+    top: -800px;
     z-index: -8;
     width: 100vw;
-    height: 700px;
+    height: var(--bgBottomShadingHeight);
     background: linear-gradient(180deg, rgba(11, 29, 38, 0.00) 0%, #0B1D26 61.38%);
 }
 
@@ -265,9 +272,8 @@ a {
     justify-content: end;
 }
 .content__item:hover {
-    color: #FFF;
-    background: rgba(255, 255, 255, 0.5);
-    background: linear-gradient(135deg, rgb(8 0 0 / 30%), rgb(4 0 0 / 1%));
+    color: var(--accent);
+    border-right-color: var(--accent);
 }
 
 /* Эксперименты */
@@ -277,7 +283,6 @@ a {
 }
 
 @media (max-width: 3999.9px) {
-
     .body-bg__item--sky {
         top: 0;
     }
@@ -287,11 +292,17 @@ a {
     .body-bg__item--mountains {
         top: 491px;
     }
-
+    .body-bg__item--bottom-shading {
+        height: 800px;
+    }
 }
 @media (max-width: 1999.9px) {
     .header__content {
         margin-top: 100px;
+    }
+    .content__item {
+        font-size: 16px;
+        height: 50px;
     }
     .header__title {
         font-size: 66px;
